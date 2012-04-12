@@ -1,0 +1,35 @@
+@(title: String, active:String)(content: Html)
+
+@naventry(text: String, url: String, id: String) = {
+	<li @if(id == active){class="active"}>
+    	<a href="@url">@text</a>
+    </li>
+}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    	<div class="navbar">
+    		<div class="navbar-inner">
+    			<div class="container">
+    				<a class="brand" href="#">nomspace</a>
+    				<ul class="nav">
+    					@naventry("Home", "/", "home")
+    					@naventry("Projects", "/projects", "projects")
+    					@naventry("About", "/about", "about")
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="container">
+        	@content
+    	</div>
+    </body>
+</html>

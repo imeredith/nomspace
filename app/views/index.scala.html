@@ -1,0 +1,20 @@
+    @renderPost(post: blog.Post) = {
+    	<div class="blog-post">
+    		<div class="blog-post-header">
+    			<div class="title">
+    				<h1>@post.title</h1>
+				</div>
+    			<div class="meta">		
+    				<span>Last updated on <b>@post.dateString</b> by <b>@post.author</b></span>
+    			</div>
+    		</div
+    		<div class="blog-post-content">
+    			@post.template()
+    		</div>
+    	</div>	
+	}
+@main("Home", "home") {
+
+
+	@renderPost(blog.Blog.latest)
+}

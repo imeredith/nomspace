@@ -1,0 +1,9 @@
+.navbar-inner .container{ margin-right: auto; margin-left: auto; width: 960px;}
+
+.blog-post-header .title {
+	border-bottom: 1px solid #999;
+}
+
+.blog-post-header {
+	margin-bottom: 10px;
+}
